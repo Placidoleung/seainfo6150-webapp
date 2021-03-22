@@ -1,15 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useState } from "react";
+import styles from "./ArticleListItem.module.css"
+import ArticleTextToggleButton from "../ArticleTextToggleButton/ArticleTextToggleButton";
+import { Link } from "react-router-dom";
 
 const ArticleListItem = (props) => {
+  const [hidden, setHidden] = useState(true);
+
+  const onClick = () => {
+    setHidden(!hidden);
+  };
+
   return (
-    <li>
+    <li className={styles.list}>
       <article>
-        <h2>{props.article.title}</h2>
-        <time dateTime={props.article.timeStamp}>
+      <Link to={'/articlelist/'+ props.article.slug}>
+        <h2 className = {styles.title}>{props.article.title}</h2>
+      </Link>
+        <time className={styles.time} style={{display: hidden?"none":"block"}}  dateTime={props.article.timeStamp}>
           {props.article.displayDate}
         </time>
-        <p>{props.article.shortText}</p>
+        <p className={styles.short} style={{display: hidden?"none":"block"}} >{props.article.shortText}</p>
+        <ArticleTextToggleButton buttonText={hidden? "Show more" : "Show less"} onClick={onClick}/>
       </article>
     </li>
   );

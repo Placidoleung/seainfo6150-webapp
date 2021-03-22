@@ -1,0 +1,17 @@
+.content {
+    padding: 20px;
+    margin: 20px;
+    border-style: dotted;
+    border-radius: 16px;
+    border-width: 2px;
+    border-color: #515457;
+    box-shadow: 0px 0px 16px red;
+}
+
+.backButton {
+    color: rgb(211, 18, 18);
+    text-decoration: underline rgb(211, 18, 18);
+    margin: 12px;
+    font-size: 22px;
+    font-weight: bold;
+}
