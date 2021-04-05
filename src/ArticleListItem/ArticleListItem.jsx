@@ -14,9 +14,9 @@ const ArticleListItem = (props) => {
 
   return (
     <li className={styles.container}>
-      <ArticleImage url = {props.article.image._url} title = {props.article.title} />
       <article className={styles.article}>
-        <div className={styles.wrapper}>
+        <div className={styles.box}>
+        <ArticleImage url = {props.article.image._url} title = {props.article.title} />
           <h2 className={styles.title}>
             <Link
               className={styles.link}
@@ -25,15 +25,17 @@ const ArticleListItem = (props) => {
               {props.article.title}
             </Link>
           </h2>
-          {isTextShowing && (
-            <div className={styles.text}>
-              <time className={styles.time} dateTime={props.article.timeStamp}>
-                {props.article.displayDate}
-              </time>
-              <p>{props.article.shortText}</p>
-            </div>
-          )}
         </div>
+        {isTextShowing && (
+          <div className={styles.text}>
+            <p>{props.article.shortText}</p>
+            <time className={styles.time} dateTime={props.article.timeStamp}>
+              {props.article.displayDate}
+            </time>
+          </div>
+        )}
+        
+        
         <ArticleTextToggleButton
           buttonText={isTextShowing ? "Show less" : "Show more"}
           onClick={onClick}

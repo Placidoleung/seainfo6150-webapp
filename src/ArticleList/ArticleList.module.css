@@ -6,4 +6,9 @@
   font-family: Arial, Helvetica, sans-serif;
   list-style-type: none;
   padding: 15px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
 }
