@@ -1,0 +1,26 @@
+
+.content {
+    column-count: 4;
+    font-size: large;
+}
+
+@media (max-width: 1300px) {
+  .content {
+    column-count: 3;
+    font-size: medium;
+  }
+}
+
+@media (max-width: 1000px) {
+  .content {
+    column-count: 2;
+    font-size: medium;
+  }
+}
+
+@media (max-width: 500px) {
+  .content {
+    column-count: 1;
+    font-size: small;
+  }
+} 
